@@ -1,0 +1,17 @@
+{
+    "name": "error_propagator",
+    "productName": "Error Propagator",
+    "version": "0.0.1",
+    "description": "a small tool for calculating error propagation",
+    "main": "./main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "author": "Clocks-in-a-cooler",
+    "license": "Unlicense",
+    "dependencies": {},
+    "devDependencies": {
+        "electron": "6.0.0",
+        "electron-packager": "latest"
+    }
+}

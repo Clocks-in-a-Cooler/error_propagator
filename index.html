@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Error Propagator</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="calculation_history" id="history"></div>
+        <div class="controls" style="background-color: gold">
+            <input type="text" placeholder="measurement (no units)" id="measurement_1"/>
+            ±<input type="text" placeholder="error" id="error_1" />
+            <select id="type_1">
+                <option value="absolute">absolute</option>
+                <option value="percent">percent</option>
+            </select>
+            <br />
+            <select id="operation">
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">x</option>
+                <option value="divide">÷</option>
+            </select>
+            <br />
+            <input type="text" placeholder="measurement (no units)" id="measurement_2"/>
+            ±<input type="text" placeholder="error" id="error_2" />
+            <select id="type_2">
+                <option value="absolute">absolute</option>
+                <option value="percent">percent</option>
+            </select>
+            <br />
+            <button id="calculate">calculate</button>
+        </div>
+        <script src="measurement.js"></script>
+        <script src="propagator.js"></script>
+    </body>
+</html>
