@@ -61,12 +61,9 @@ function display(a, b, operation, result) {
             break;
     }
     
-    var m_1 = "(" + a.value + "±" + a.error + ")";
-    var m_2 = "(" + b.value + "±" + b.error + ")";
-    var m_3 = "(" + result.value + "±" + result.error + ")";
-    
-    elt.innerHTML = m_1 + operator + m_2 + " = " + m_3;
+    elt.innerHTML = a.to_string() + operator + b.to_string() + " = " + result.to_string();
     
     _("history").appendChild(elt);
+    _("history").scrollTop = _("history").scrollHeight;
 }
 

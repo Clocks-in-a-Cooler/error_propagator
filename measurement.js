@@ -1,6 +1,6 @@
 function Measurement(value, error, type) {
-    this.value = value;
-    this.error = error;
+    this.value = isNaN(value) ? 0 : value;
+    this.error = isNaN(error) ? 0 : error;
     this.type = type == "percent" ? "percent" : "absolute";
 }
 
@@ -81,3 +81,8 @@ Measurement.prototype.divide = function(other) {
         }
     }
 };
+
+Measurement.prototype.to_string = function() {
+    return "(" + this.value + "±" + this.error + (this.type == "percent" ? "%" : "") + ")";
+};
+

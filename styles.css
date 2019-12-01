@@ -33,6 +33,7 @@ body, viewer {
     display: block;
     background-color: steelblue;
     color: white;
+    margin: 2px;
 }
 
 .controls {
