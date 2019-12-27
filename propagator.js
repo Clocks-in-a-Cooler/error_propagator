@@ -13,8 +13,14 @@ function get_number(measurement, error, type) {
         return new Measurement(Number(measurement), Number(error), get_selected(type));
     }
 }
-
+var answer = new Measurement(0, 0, "absolute");
 var _ = function(id) { return document.getElementById(id); };
+
+_("answer").addEventListener("click", () => {
+    _("measurement_1").value = answer.value;
+    _("error_1").value = answer.error;
+    _("type_1").value = answer.type;
+});
 
 document.getElementById("calculate").addEventListener("click", function() {
     var m_1 = get_number(_("measurement_1").value, _("error_1").value, _("type_1"));
@@ -39,6 +45,7 @@ document.getElementById("calculate").addEventListener("click", function() {
     }
     
     display(m_1, m_2, operation, result);
+    answer = result;
 });
 
 function display(a, b, operation, result) {
@@ -62,6 +69,21 @@ function display(a, b, operation, result) {
     }
     
     elt.innerHTML = a.to_string() + operator + b.to_string() + " = " + result.to_string();
+    
+    var colour = result.type == "percent" ? "indianred" : "steelblue";
+    elt.style.backgroundColor = colour;
+    
+    //closure time! there goes my RAM!
+    elt.addEventListener("click", () => {
+        if (result.type == "percent") {
+            result = result.to_absolute();
+        } else {
+            result = result.to_percent();
+        }
+        colour = result.type == "percent" ? "indianred" : "steelblue";
+        elt.style.backgroundColor = colour;
+        elt.innerHTML = a.to_string() + operator + b.to_string() + " = " + result.to_string();
+    });
     
     _("history").appendChild(elt);
     _("history").scrollTop = _("history").scrollHeight;
