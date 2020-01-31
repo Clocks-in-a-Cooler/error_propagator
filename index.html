@@ -8,32 +8,34 @@
     </head>
     <body>
         <div class="calculation_history" id="history"></div>
-        <div class="controls" style="background-color: gold">
+        <div class="controls">
             <input type="text" placeholder="measurement (no units)" id="measurement_1"/>
-            ±<input type="text" placeholder="error" id="error_1" />
-            <select id="type_1">
-                <option value="absolute">absolute</option>
-                <option value="percent">percent</option>
-            </select>
+            ±&#160;<input type="text" placeholder="error" id="error_1" />
+            <div id="type_1">
+                <button class="rbutton" >absolute</button>
+                <button class="rbutton" >percent</button>
+            </div>
             <button id="answer">last answer</button>
             <br />
-            <select id="operation">
-                <option value="plus">+</option>
-                <option value="minus">-</option>
-                <option value="multiply">x</option>
-                <option value="divide">÷</option>
-            </select>
-            <br />
+            <div id="operation">
+                <button class="rbutton">+</button>
+                <button class="rbutton">-</button>
+                <button class="rbutton">x</button>
+                <button class="rbutton">÷</button>
+            </div>
+            <!--<br />-->
             <input type="text" placeholder="measurement (no units)" id="measurement_2"/>
-            ±<input type="text" placeholder="error" id="error_2" />
-            <select id="type_2">
-                <option value="absolute">absolute</option>
-                <option value="percent">percent</option>
-            </select>
+            ±&#160;<input type="text" placeholder="error" id="error_2" />
+            <div id="type_2">
+                <button class="rbutton" >absolute</button>
+                <button class="rbutton" >percent</button>
+            </div>
             <br />
             <button id="calculate">calculate</button>
         </div>
+        <!--
+        <script src="rbutton.js"></script>
         <script src="measurement.js"></script>
-        <script src="propagator.js"></script>
+        <script src="propagator.js"></script> -->
     </body>
 </html>

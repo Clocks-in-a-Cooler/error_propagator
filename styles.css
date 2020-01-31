@@ -1,21 +1,14 @@
-html {
-    box-sizing: border-box;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
 html, body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    position: absolute;
+    top: 0; left: 0;
 }
 
 body {
     margin: 0;
     padding: 0;
-    position: absolute;
 }
 
 body, viewer {
@@ -25,12 +18,13 @@ body, viewer {
 .calculation_history {
     width: 100%;
     height: 450px;
-    background-color: powderblue;
+    background-color: aliceblue;
     overflow: scroll;
 }
 
 .calculation {
     display: block;
+    border-radius: 5px;
     background-color: steelblue;
     color: white;
     margin: 2px;
@@ -40,5 +34,83 @@ body, viewer {
 .controls {
     width: 100%;
     height: 150px;
-    background-color: gold;
+    background-color: mintcream;
+    border-top: 1px solid black;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+input["text"] {
+    height: 1.5em;
+    color: black;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#type_1, #type_2 {
+    display: inline;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#answer {
+    color: mediumvioletred;
+    border: 1px solid mediumvioletred;
+    background-color: white;
+    transition: background-color .5s, color .5s;
+}
+
+#answer:hover {
+    color: white;
+    background-color: mediumvioletred;
+    transition: background-color .5s, color .5s;
+}
+
+#operation {
+    left: 0; right: 0;
+    margin: auto;
+    width: 7em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#calculate {
+    position: relative;
+    left: 200px; right: 200px;
+    margin-top: 5px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid forestgreen;
+    color: forestgreen;
+    background-color: white;
+    transition: background-color .5s, color .5s;
+}
+
+#calculate:hover {
+    color: white;
+    background-color: forestgreen;
+    transition: background-color .5s, color .5s;
+}
+
+.rbutton {
+    min-width: 1.5em;
+    color: silver;
+    border: 1px solid silver;
+    background-color: white;
+    padding: 3px;
+    display: inline;
+    transition: background-color .5s, color .5s;
+}
+
+.rbutton:hover {
+    color: white;
+    background-color: silver;
+    transition: background-color .5s, color .5s;
+}
+
+.selected {
+    color: white;
+    border: 1px solid dimgrey;
+    background-color: black;
 }

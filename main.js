@@ -4,7 +4,7 @@ var window = null;
 
 function create_window() {
     window = new Electron.BrowserWindow({
-        width: 500,
+        width: 560,
         height: 600,
         webPreferences: {
             nodeIntegration: true,
@@ -14,7 +14,7 @@ function create_window() {
     });
     
     window.loadFile("index.html");
-    
+
     window.on("ready-to-show", function() {
         window.show();
     });
