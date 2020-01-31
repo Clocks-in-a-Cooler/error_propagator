@@ -82,7 +82,15 @@ Measurement.prototype.divide = function(other) {
     }
 };
 
-Measurement.prototype.to_string = function() {
+Measurement.prototype.to_string = function(places) {
+    if (!isNaN(places) && places >= 0) {
+        return "(" + round_to(this.value, places) + "±" + round_to(this.error, places) + (this.type == "percent" ? "%" : "") + ")";
+    }
+    
     return "(" + this.value + "±" + this.error + (this.type == "percent" ? "%" : "") + ")";
 };
 
+function round_to(num, places) {
+    var factor = 10 ** places;
+    return Math.round(num * factor) / factor;
+}
