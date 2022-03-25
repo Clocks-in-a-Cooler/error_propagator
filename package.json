@@ -11,7 +11,7 @@
     "license": "Unlicense",
     "dependencies": {},
     "devDependencies": {
-        "electron": "6.0.0",
+        "electron": "13.6.6",
         "electron-packager": "latest"
     }
 }
